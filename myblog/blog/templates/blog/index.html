@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>index</title>
+</head>
+<body>
+	
+	<h1>
+		<a href="{% url 'blog:action' 0 %}">新文章</a>
+	</h1>
+	{% for art in arts %}
+	<h3>
+		<a href="{% url 'blog:page' art.id %}">{{art.title}}</a>	
+		</a>
+
+	</h3>
+
+	{% endfor %}
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>编辑界面</title>
+</head>
+<body>
+<form action="{% url 'blog:act' %}" method="post">
+	{% csrf_token %}
+	{% if art.id %}
+	<input type="hidden" name="art_id" value = {{art.id}}>
+	<label>title
+	<input type="Text" name="title" value = {{art.title}}>
+	</label>
+	<br>
+	<label>content
+	<input type="Text" name="content" value = {{art.content}}>
+	</label>
+	<br>
+	{% else %}
+	<input type="hidden" name="art_id" value = 0>
+	<label>title
+	<input type="Text" name="title" >
+	</label>
+	<br>
+	<label>content
+	<input type="Text" name="content" >
+	</label>
+	<br>
+	{% endif %}
+	<input type="Submit" value="提交">
+
+</form>
+</body>
+</html>

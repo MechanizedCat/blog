@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>content</title>
+</head>
+<body>
+<h1>{{art.title}}</h1>
+<br>
+<p>
+	{{art.content}}
+</p>
+<a href="{% url 'blog:index' %}">返回目录</a>
+<br>
+{% if art.id %}
+<a href="{% url 'blog:action' art.id%}">编辑</a>
+{% else %}
+<a href="{% url 'blog:action' 0 %}">编辑</a>
+{% endif %}
+</body>
+</html>
